@@ -1,0 +1,106 @@
+body
+{
+    background: #F3F3FF;
+}
+h1
+{
+    font-size: 140%;
+    font-weight: bold;
+    color: #6666FF;
+}
+h2
+{
+    font-size: 120%;
+    font-weight: normal;
+    border-left: 12px #AAAAFF solid;
+    border-top: 2px #AAAAFF solid;
+    padding: 0.2em 0.4em 0.1em 0.4em;
+    background-color: #CCCCFF;
+    color: #5555FF;
+}
+h3
+{
+    font-size: 100%;
+    font-weight: normal;
+    border-top: 2px #AAAAFF dotted;
+    border-left: 2px #AAAAFF dotted;
+    padding: 0.2em 0.4em 0.1em 0.4em;
+    color: #5555FF;
+    margin-bottom: 1ex;
+}
+h4
+{
+    font-size: 100%;
+    font-weight: normal;
+    border-top: 1px #AAAAFF dotted;
+    border-left: 1px #AAAAFF dotted;
+    padding: 0.2em 0.4em 0.1em 0.4em;
+    color: #5555FF;
+    margin-bottom: 1ex;
+}
+th
+{
+    font-weight: normal;
+    color: #0000AA;
+    background: #BBBBFF;
+}
+td
+{
+    background: #DDDDFF;
+}
+pre
+{
+    color: #0000AA;
+    background: #FFFFFF;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+    padding: 0.1em 0.1em 0.1em 0.1em;
+}
+table.info
+{
+    font-size: 90%;
+}
+td.bl
+{
+    border-left: 1px #FF0000 solid;
+}
+td.br
+{
+    border-right: 1px #FF0000 solid;
+}
+td.blr
+{
+    border-left: 1px #FF0000 solid;
+    border-right: 1px #FF0000 solid;
+}
+li
+{
+    padding-bottom: 0.4em;
+}
+dd
+{
+    padding-bottom: 0.4em;
+}
+blockquote
+{
+    margin-left: 1em;
+}
+ul
+{
+    margin-top: 0.0em;
+    padding-left: 1em;
+}
+button, input, select, textarea
+{
+    font-family: inherit;
+    font-size: 100%;
+}
+pre
+{
+    font-size: 100%;
+overflow: auto;
+}
+.monospace
+{
+    font-family: monospace;
+}
