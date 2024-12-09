@@ -7,7 +7,7 @@
 <body>
 <a href="http://euee.web.fc2.com/tool/tool.html">戻る</a>
 <p>np2kaiのemscripten(JavaScript)版のテスト環境です。</p>
-<p>ブラウザのメモリ上にファイルシステ�&nbsp;が作成されます。ページ下部にそのエクスプローラがあります。</p>
+<p>ブラウザのメモリ上にファイルシステムが作成されます。ページ下部にそのエクスプローラがあります。</p>
 <p>/home/web_user/.config/np21kai にnp2kaiの実行に必要なファイル(bios.romやfont.bmpなど)やディスクイメージファイルを登録して「np2kai実行」ボタンをクリックします。日本語のファイル名は使用できません。</p>
 <p>マウスの中ボタンクリック、またはCtrl+F11でメニューが表示されます。メニューからフロッピーディスクイメージ(FDD)やハードディスクイメージ(HardDisk)を選択してからEmulate - Resetすることでそれらから起動できます。</p>
 <p>入力できないキーが結構あります。メニュー - [Other] - [Software keyboard] からキーボードを表示して多少入力することができます。ちゃんとしたものではないためDOSくらいでしか入力できないかもしれません。</p>
@@ -27,7 +27,6 @@
     <div class="emscripten">
       <input type="checkbox" id="resize">Resize canvas
       <input type="checkbox" id="pointerLock" checked="">Lock/hide mouse pointer
-      �&nbsp;�&nbsp;�&nbsp;
       <input type="button" value="Fullscreen" onclick="Module.requestFullscreen(document.getElementById('pointerLock').checked, 
                                                                                 document.getElementById('resize').checked)">
     </div>
@@ -36,20 +35,20 @@
     <textarea class="emscripten" id="output" rows="8" style="width: 100%;"></textarea>
     <hr>
 <script>function postRun(){}var statusElement=document.getElementById("status"),progressElement=document.getElementById("progress"),spinnerElement=document.getElementById("spinner"),Module={preRun:[],postRun:[postRun],print:function(){var e=document.getElementById("output");return e&&(e.value=""),function(t){arguments.length>1&&(t=Array.prototype.slice.call(arguments).join(" ")),console.log(t),e&&(e.value+=t+"\n",e.scrollTop=e.scrollHeight)}}(),printErr:function(e){arguments.length>1&&(e=Array.prototype.slice.call(arguments).join(" ")),console.error(e)},canvas:function(){var e=document.getElementById("canvas");return e.addEventListener("webglcontextlost",(function(e){alert("WebGL context lost. You will need to reload the page."),e.preventDefault()}),!1),e}(),setStatus:function(e){if(Module.setStatus.last||(Module.setStatus.last={time:Date.now(),text:""}),e!==Module.setStatus.last.text){var t=e.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/),n=Date.now();t&&n-Module.setStatus.last.time<30||(Module.setStatus.last.time=n,Module.setStatus.last.text=e,t?(e=t[1],progressElement.value=100*parseInt(t[2]),progressElement.max=100*parseInt(t[4]),progressElement.hidden=!1,spinnerElement.hidden=!1):(progressElement.value=null,progressElement.max=null,progressElement.hidden=!0,e||(spinnerElement.hidden=!0)),statusElement.innerHTML=e)}},totalDependencies:0,monitorRunDependencies:function(e){this.totalDependencies=Math.max(this.totalDependencies,e),Module.setStatus(e?"Preparing... ("+(this.totalDependencies-e)+"/"+this.totalDependencies+")":"All downloads complete.")}};Module.setStatus("Downloading..."),window.onerror=function(){Module.setStatus("Exception thrown, see JavaScript console"),spinnerElement.style.display="none",Module.setStatus=function(e){e&&Module.printErr("[post-exception status] "+e)}}</script>
-    <script async="" type="text/javascript" src="../../euee.web.fc2.com/em/np21kai_yksoft1/np21kai.js"></script>
-<script type="text/javascript" src="../../euee.web.fc2.com/em/np21kai_yksoft1/knockout-3.4.2.js"></script>
-<script type="text/javascript" src="../../euee.web.fc2.com/em/np21kai_yksoft1/jszip.min.js"></script>
+    <script async="" type="text/javascript" src="np21kai.js"></script>
+<script type="text/javascript" src="knockout-3.4.2.js"></script>
+<script type="text/javascript" src="jszip.min.js"></script>
 
 <p><button type="button" id="executeButton">np2kai実行</button></p>
 <p>
 ファイル: <input type="file" id="file">
 </p>
 <p>
-<button type="button" id="addButton">ファイル追�&nbsp;</button>
+<button type="button" id="addButton">ファイル追加</button>
 <input type="checkbox" data-bind="checked: unzip">ZIPファイルは展開する
 </p>
 <p>
-サーバーにアップロードするわけでありません。ブラウザのメモリ内のファイルシステ�&nbsp;に追�&nbsp;する�&nbsp;けです。このページを再読み込みするとすべて削除されます。
+サーバーにアップロードするわけでありません。ブラウザのメモリ内のファイルシステムに追加するだけです。このページを再読み込みするとすべて削除されます。
 </p>
 <!-- ko with: explorer -->
 <p>
